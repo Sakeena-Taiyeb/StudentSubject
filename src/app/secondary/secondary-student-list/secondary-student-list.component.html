@@ -1,0 +1,87 @@
+<div class="jumbotron">
+  <div class="row">
+      <div class="col-md-4">
+          <form #frm="ngForm"(ngSubmit)="addItem(frm)" *ngIf="!toggleForm">
+              <h2 id="add-item">REGISTER STUDENT</h2>
+              <div class = "form-group">
+                <label for ="itemName"> Name : </label>
+                <input type="text" class ="form-control" name ="itemName" value ="itemName" ngModel required>
+              </div>
+              <div class = "form-group">
+                  <label for ="itemQuantity"> STUDENT ID:</label>
+                  <input type="number" class ="form-control" name ="Id" value = "Id" ngModel required>
+                </div>
+              <div class = "form-group">
+                <label for ="itemQuantity"> CLASS:</label>
+                <input type="text" class ="form-control" name ="class" value = "class" ngModel required>
+              </div>
+              <button type ="submit" name = "button" class ="btn btn-success" [disabled]=frm.invalid>Add</button>
+            </form>
+            
+            <form #editform = "ngForm" (ngSubmit)= "editItem(editform)" *ngIf ="toggleForm" >
+              <h2 id="edit-item">EDIT FORM</h2>
+              <div class = "form-group">
+                <label for="name "> Name : </label>
+                <input type="text" class ="form-control" name ="name" value = "name" [ngModel]="selectedItem.name" >
+              </div>
+              <div class = "form-group">
+                <label for ="Id"> STUDENT ID:</label>
+                <input type="number" class ="form-control"  name ="Id" value = "Id" [ngModel]="selectedItem.Id">
+              </div>
+             <!-- <div class = "form-group">
+                  <label for ="class"> CLASS:</label>
+                  <input type="string" class ="form-control"  name ="class" value = "class" [ngModel]="selectedItem.class">
+                </div>-->
+              <button type ="submit" name = "button" class ="btn btn-success"> Save</button>
+            </form>
+        </div>
+        <div class="col-md-8">
+          
+           <th><h2 id ="Student-list" >STUDENT LIST</h2></th> 
+            <table class="table table-responsive">
+             <thead> <th>ID</th>
+              <th>NAME</th>
+              <th>CLASS</th>
+              <th rowspan="2" aria-colspan="20"><tr  style="align-items: center">SUBJECT</tr>
+                <!--<tr><th colspan="4">ENGLISH</th>
+                  <th colspan="4">HINDI</th>
+                <th colspan="4">SCIENCE</th>
+              <th colspan="4">SO.SCIENCE</th>
+               <th colspan="4">MATHEMATICS</th></tr>-->
+              </th>
+             </thead>
+            <tr *ngFor = "let item of studentList" >
+               <td>{{item.Id}}</td>
+               <td> {{item.name}}</td>
+                <td>{{item.class}}</td> 
+                <td *ngFor="let sub of subjectName">{{sub["section"]}}
+                  </td>
+            
+                <td>
+                <button type = "button" name ="button" class="btn btn-primary"(click)="showEditForm(item)"[disabled]="toggleForm">Edit</button>
+              </td>
+              <td>
+                <button type ="button" name ="button" class="btn btn-danger" (click)="deleteItem(item._id)">Delete</button>
+              </td>
+            </tr>
+            </table>
+              </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>

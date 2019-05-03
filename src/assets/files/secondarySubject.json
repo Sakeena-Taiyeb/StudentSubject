@@ -1,0 +1,15 @@
+[
+    { "name":"English",
+     "section":[ "Literature", "Grammar"] ,
+     "MaxMarks":[80,20],
+     "subjectType":1,
+     "subjectCode":"ENG",
+     "ExamType":"Written"
+    },
+
+    { "name":"Hindi", "section":[  "Part1", "Part2" ] ,"MaxMarks":[80,20],"subjectType":1,"subjectCode":"HIN","ExamType":"Written"},
+    { "name":"Science", "section":[ "Physics", "Chemestry","Biology" ],"MaxMarks":[25,25,25,10],"subjectType":1,"subjectCode":"SCI","ExamType":["Written","Practical","Oral"]},
+    { "name":"SocialScience", "section":[ "History", "civics","Geography","Economics"] ,"MaxMarks":[20,30,30,20],"subjectType":1,"subjectCode":"SOC","ExamType":"Written"},
+    { "name":"Mathematics", "section":[ "Part1", "Geometry"],"MaxMarks":[60,40],"subjectType":1,"subjectCode":"MAT","ExamType":"Written"} ,
+    {"name":"MoralScience","MaxMarks":50,"subjectType":2,"subjectCode":"MOR","ExamType":"Written"}
+  ]
